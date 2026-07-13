@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors — Retro Arcade Edition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="scanlines"></div>
+
+    <div class="cabinet">
+      <!-- Top bar -->
+      <header class="topbar">
+        <div class="high-score">
+          <span class="arrow">▶</span> HIGH SCORE
+          <div class="high-score-value" id="highScore">00000</div>
+        </div>
+
+        <div class="sound">
+          <span class="arrow">▶</span> SOUND:
+          <button id="soundToggle" class="sound-toggle" aria-pressed="true">
+            ON
+          </button>
+        </div>
+
+        <div class="title-block">
+          <p class="mode">★ 1 PLAYER GAME ★</p>
+          <h1 class="game-title">ROCK PAPER SCISSORS</h1>
+          <p class="subtitle">— RETRO ARCADE EDITION —</p>
+        </div>
+      </header>
+
+      <!-- Ghosts -->
+      <div class="ghost ghost-left" aria-hidden="true">
+        <div class="ghost-body ghost-red"></div>
+        <div class="ghost-trail"></div>
+      </div>
+      <div class="ghost ghost-right" aria-hidden="true">
+        <div class="ghost-body ghost-blue"></div>
+        <div class="ghost-trail"></div>
+      </div>
+
+      <!-- Main screen -->
+      <main class="screen">
+        <section class="battle">
+          <div class="fighter fighter-you">
+            <h2>YOU</h2>
+            <div class="fighter-box box-green" id="youBox">
+              <span class="icon" id="youIcon">?</span>
+            </div>
+          </div>
+
+          <div class="vs">VS</div>
+
+          <div class="fighter fighter-cpu">
+            <h2>COMPUTER</h2>
+            <div class="fighter-box box-pink" id="cpuBox">
+              <span class="icon" id="cpuIcon">?</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="result-banner" id="resultBanner">
+          <p id="resultText">MAKE YOUR MOVE</p>
+        </section>
+
+        <section class="scoreboard">
+          <div class="score-col">
+            <h3 class="score-label label-you">YOU</h3>
+            <p class="score-value value-you" id="youScore">00</p>
+          </div>
+          <div class="score-mid">
+            <span class="trophy">🏆</span>
+          </div>
+          <div class="score-col">
+            <h3 class="score-label label-cpu">COMPUTER</h3>
+            <p class="score-value value-cpu" id="cpuScore">00</p>
+          </div>
+        </section>
+
+        <section class="moves">
+          <p class="moves-label">✦ CHOOSE YOUR MOVE ✦</p>
+          <div class="move-buttons">
+            <button class="move-btn move-rock" data-move="rock">
+              <span class="move-icon">🪨</span>
+              <span class="move-name">ROCK</span>
+            </button>
+            <button class="move-btn move-paper" data-move="paper">
+              <span class="move-icon">📄</span>
+              <span class="move-name">PAPER</span>
+            </button>
+            <button class="move-btn move-scissors" data-move="scissors">
+              <span class="move-icon">✂️</span>
+              <span class="move-name">SCISSORS</span>
+            </button>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <button id="resetBtn" class="reset-btn">
+          ···· ✦ RESET SCORE ✦ ····
+        </button>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
